@@ -76,13 +76,13 @@ WSGI_APPLICATION = 'stocks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stocks',
-        'USER': 'django',
-        'PASSWORD': 'django',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD':  os.getenv('DB_PWD'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'TEST': {
-            'NAME': 'stocks_test'
+            'NAME': os.getenv('DB_TEST') 
         },
     }
 }
