@@ -1,0 +1,19 @@
+language: python
+python:
+  - '3.6.7'
+install: 
+- pip install -r requirements.txt
+services:
+  - postgresql
+addons:
+  postgresql: "9.6"
+before_script:
+  - psql -c "CREATE DATABASE stocks;" -U postgres
+  - psql -c "CREATE USER test WITH PASSWORD 'test';" -U postgres
+  - psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to test;" -U postgres
+script: 
+  - coverage run --source="." manage.py test
+  - coverage report
+after_success:
+  - coveralls
+cache: pip
