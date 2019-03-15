@@ -10,6 +10,7 @@ addons:
 before_script:
   - psql -c "CREATE DATABASE stocks;" -U postgres
   - psql -c "CREATE USER django WITH PASSWORD 'django';" -U postgres
+  - psql -c "ALTER USER django CREATEDB;" -U postgres
   - psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to django;" -U postgres
 script: 
   - coverage run --source="." manage.py test
