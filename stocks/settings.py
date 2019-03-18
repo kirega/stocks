@@ -85,7 +85,7 @@ DATABASES = {
         'HOST': os.getenv('HOST'),
         'PORT': os.getenv('PORT'),
         'TEST': {
-            'NAME': os.getenv('DB_NAME')
+            'NAME': os.getenv('DB_TEST')
         },
     }
 }
