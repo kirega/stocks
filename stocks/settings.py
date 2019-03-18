@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['prox-stock.herokuapp.com','locahost', '127.0.0.1']
 
 
 # Application definition
