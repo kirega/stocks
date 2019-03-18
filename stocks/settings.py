@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
+import datetime
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['prox-stock.herokuapp.com','locahost', '127.0.0.1']
+ALLOWED_HOSTS = ['prox-stock.herokuapp.com','localhost', '127.0.0.1']
 
 
 # Application definition
@@ -111,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
     'DEFAULT_PARSER_CLASSES': (
@@ -119,7 +120,9 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication'
     ),
     'DEFAULT_FILTER_BACKENDS': (
@@ -127,6 +130,10 @@ REST_FRAMEWORK = {
     )
 }
 
+JWT_AUTH = { 
+    'JWT_AUTH_HEADER_PREFIX': 'Bearer',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=300)
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
