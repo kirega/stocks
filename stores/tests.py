@@ -16,7 +16,7 @@ class StoreTestCase(TestCase):
 
     def test_2_store_model_str(self):
         """ Test the model string representation method"""
-        self.assertEqual(Store.objects.get(name="Main").str(),'Main - Nairobi')
+        self.assertEqual(Store.objects.get(name="Main").__str__(),'Main - Nairobi')
 
     def test_3_store_deleted(self):
         """Test the deletion of a store from the model"""

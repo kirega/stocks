@@ -16,7 +16,7 @@ class ProductTestCase(TestCase):
 
     def test_2_product_model_str(self):
         """ Test the model string representation method"""
-        self.assertEqual(Product.objects.get(name="Kiwi").str(),'Kiwi - 500')
+        self.assertEqual(Product.objects.get(name="Kiwi").__str__(),'Kiwi - 500')
 
     def test_3_product_deleted(self):
         """Test the deletion of a product from the model"""

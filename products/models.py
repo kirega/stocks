@@ -10,5 +10,5 @@ class Product(models.Model):
     price = models.PositiveIntegerField()
     uom = models.CharField(max_length=255, choices=UOM, default='UNIT')
 
-    def str(self):
+    def __str__(self):
         return '{} - {}'.format(self.name, self.price)

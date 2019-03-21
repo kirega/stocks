@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'products.apps.ProductsConfig',
-    'stores.apps.StoresConfig'
+    'stores.apps.StoresConfig',
+    'inventory.apps.InventoryConfig'
 ]
 
 MIDDLEWARE = [
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
