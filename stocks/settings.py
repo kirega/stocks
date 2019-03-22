@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
+
      'corsheaders',
+
+    'rest_framework_swagger',
+
     'products.apps.ProductsConfig',
     'stores.apps.StoresConfig',
     'inventory.apps.InventoryConfig'
