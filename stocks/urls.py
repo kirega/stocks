@@ -20,6 +20,10 @@ from django.conf.urls.static import static
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework_jwt.views import refresh_jwt_token
 from rest_framework_jwt.views import verify_jwt_token
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Prox Stock Tracker API')
+
 urlpatterns = [
     path('api/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
@@ -29,5 +33,8 @@ urlpatterns = [
     path('auth-jwt/', obtain_jwt_token),
     path('auth-jwt-refresh/', refresh_jwt_token),
     path('auth-jwt-verify/', verify_jwt_token),
+    path('docs/', schema_view)
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
