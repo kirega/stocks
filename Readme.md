@@ -11,13 +11,17 @@ Technologies used:
 - djangorestauth
 - markdown
 - django-filters
-To run this application:
-    `git clone https://github.com/kirega/stocks.git`
-then:
-    `virtualenv env`
-    `source env/bin/activate`
-    `pip install -r requirements.txt`
-finally:
-    `python manage.py runserver`
-You can access the browsable api by going to:
-    `localhost:8000`
+
+To run this application:-
+<br> `git clone https://github.com/kirega/stocks.git`
+<br>
+then:-<br>
+    - `virtualenv env` <br>
+    - `source env/bin/activate`<br>
+    - `pip install -r requirements.txt` <br>
+finally:- <br>
+    - `python manage.py runserver`<br>
+
+You can access the browsable api by going to:-
+<br>
+    - `localhost:8000`
