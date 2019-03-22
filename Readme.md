@@ -11,6 +11,7 @@ Technologies used:
 - djangorestauth
 - markdown
 - django-filters
+
 To run this application:
     `git clone https://github.com/kirega/stocks.git`
 then:
