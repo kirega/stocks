@@ -6,5 +6,5 @@ class Store(models.Model):
     location = models.CharField(max_length=255)
     capacity = models.PositiveIntegerField(blank=True, null=True)
 
-    def str(self):
+    def __str__(self):
         return '{} - {}'.format(self.name, self.location)
